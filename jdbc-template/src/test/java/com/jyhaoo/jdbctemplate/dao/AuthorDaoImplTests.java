@@ -1,4 +1,4 @@
 package com.jyhaoo.jdbctemplate.dao;
 
-public interface BookDao {
+public class AuthorDaoImplTests {
 }

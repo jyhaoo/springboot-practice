@@ -1,2 +1,4 @@
-package com.jyhaoo.jdbctemplate.dao;public interface AuthorDao {
+package com.jyhaoo.jdbctemplate.dao;
+
+public interface AuthorDao {
 }
