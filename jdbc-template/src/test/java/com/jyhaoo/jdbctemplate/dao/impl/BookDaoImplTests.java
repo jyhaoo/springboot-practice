@@ -4,6 +4,7 @@ import com.jyhaoo.jdbctemplate.dao.impl.BookDaoImpl;
 import com.jyhaoo.jdbctemplate.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -36,6 +37,16 @@ public class BookDaoImplTests {
                 eq("818-1-2034-5033-0"),
                 eq("Percy Jakeson"),
                 eq(1L)
+        );
+    }
+
+    @Test
+    public void testThatFindOneBookGeneratesCorrectSql() {
+        underTest.find("818-1-2034-5033-0");
+        verify(jdbcTemplate).query(
+                eq("SELECT isbn, title, author_id FROM books WHERE isbn = ? LIMIT 1"),
+                ArgumentMatchers.<BookDaoImpl.BookRowMapper>any(),
+                eq("818-1-2034-5033-0")
         );
     }
 }
