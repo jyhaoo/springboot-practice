@@ -1,4 +1,4 @@
-package com.jyhaoo.jdbctemplate.dao;
+package com.jyhaoo.jdbctemplate.dao.impl;
 
 import com.jyhaoo.jdbctemplate.dao.impl.AuthorDaoImpl;
 import com.jyhaoo.jdbctemplate.domain.Author;
