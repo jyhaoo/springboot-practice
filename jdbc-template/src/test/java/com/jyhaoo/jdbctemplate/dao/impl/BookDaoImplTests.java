@@ -1,6 +1,6 @@
 package com.jyhaoo.jdbctemplate.dao.impl;
 
-import com.jyhaoo.jdbctemplate.dao.impl.BookDaoImpl;
+import com.jyhaoo.jdbctemplate.TestDataUtil;
 import com.jyhaoo.jdbctemplate.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,11 +24,7 @@ public class BookDaoImplTests {
 
     @Test
     public void testThatCreateBookGeneratesCorrectSql() {
-        Book book = Book.builder()
-                .isbn("818-1-2034-5033-0")
-                .title("Percy Jakeson")
-                .authorId(1L)
-                .build();
+        Book book = TestDataUtil.createTestBook();
 
         underTest.create(book);
 
