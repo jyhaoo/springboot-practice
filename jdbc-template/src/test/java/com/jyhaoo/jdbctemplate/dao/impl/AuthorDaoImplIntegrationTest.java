@@ -27,6 +27,7 @@ public class AuthorDaoImplIntegrationTest {
     public void testThatAuthorCanBeCreatedAndRecalled() {
         Author author = TestDataUtil.createTestAuthor();
         underTest.create(author);
+
         Optional<Author> result = underTest.findOne(author.getId());
         assertThat(result).isPresent();
         assertThat(result.get()).isEqualTo(author);
@@ -36,6 +37,7 @@ public class AuthorDaoImplIntegrationTest {
     public void testThatAuthorCanBeUpdated() {
         Author author = TestDataUtil.createTestAuthor();
         underTest.create(author);
+
         author.setName("UPDATED");
         underTest.update(author.getId(), author);
         Optional<Author> result = underTest.findOne(author.getId());
@@ -47,6 +49,7 @@ public class AuthorDaoImplIntegrationTest {
     public void testThatAuthorCanBeDeleted() {
         Author author = TestDataUtil.createTestAuthor();
         underTest.create(author);
+
         underTest.delete(author.getId());
         Optional<Author> result = underTest.findOne(author.getId());
         assertThat(result).isEmpty();
