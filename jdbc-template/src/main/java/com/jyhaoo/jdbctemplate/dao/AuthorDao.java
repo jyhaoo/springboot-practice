@@ -7,7 +7,9 @@ import java.util.Optional;
 public interface AuthorDao {
     void create(Author author);
 
-    Optional<Author> findOne(long l);
+    Optional<Author> findOne(long id);
 
-    void update(long l, Author author);
+    void update(long id, Author author);
+
+    void delete(long id);
 }
