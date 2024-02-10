@@ -45,4 +45,15 @@ public class BookDaoImplTests {
                 eq("818-1-2034-5033-0")
         );
     }
+
+    @Test
+    public void testThatUpdateGeneratesCorrectSql() {
+        Book book = TestDataUtil.createTestBook();
+        underTest.update(book.getIsbn(), book);
+        verify(jdbcTemplate).update(
+                "UPDATE books SET isbn = ?, title = ?, author_id = ? WHERE isbn = ?",
+                "818-1-2034-5033-0", "Percy Jakeson", 1L, "818-1-2034-5033-0"
+        );
+
+    }
 }
