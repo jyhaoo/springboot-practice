@@ -8,4 +8,4 @@ services:
       - "5432:5432"
     restart: always
     environment:
-      POSTRES_PASSWORD: changemeinprod!
+      POSTGRES_PASSWORD: changemeinprod!
