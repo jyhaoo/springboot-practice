@@ -13,11 +13,11 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBook() {
+    public static Book createTestBook(final Author author) {
         return Book.builder()
                 .isbn("818-1-2034-5033-0")
                 .title("Percy Jakeson")
-                .authorId(1L)
+                .author(author)
                 .build();
     }
 }
