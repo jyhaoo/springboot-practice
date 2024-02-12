@@ -9,7 +9,7 @@ public final class TestDataUtil {
         return Author.builder()
                 .id(1L)
                 .name("Tom Harold")
-                .age(56)
+                .age(80)
                 .build();
     }
 
@@ -17,7 +17,7 @@ public final class TestDataUtil {
         return Author.builder()
                 .id(2L)
                 .name("Jerry Hox")
-                .age(56)
+                .age(46)
                 .build();
     }
 
@@ -25,7 +25,7 @@ public final class TestDataUtil {
         return Author.builder()
                 .id(3L)
                 .name("Jared Long")
-                .age(56)
+                .age(37)
                 .build();
     }
 
