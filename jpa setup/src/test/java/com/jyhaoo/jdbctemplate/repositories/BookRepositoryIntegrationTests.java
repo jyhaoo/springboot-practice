@@ -55,23 +55,20 @@ public class BookRepositoryIntegrationTests {
                 .hasSize(3)
                 .containsExactly(bookA, bookB, bookC);
     }
-//
-//    @Test
-//    public void testThatBookCanBeUpdated() {
-//        Author author = TestDataUtil.createTestAuthor();
-//        authorDao.create(author);
-//
-//        Book book = TestDataUtil.createTestBook();
-//        book.setAuthorId(author.getId());
-//        underTest.create(book);
-//
-//        book.setTitle("Percy Patterson");
-//        underTest.update(book.getIsbn(), book);
-//        Optional<Book> result = underTest.find(book.getIsbn());
-//        assertThat(result).isPresent();
-//        assertThat(result.get()).isEqualTo(book);
-//    }
-//
+
+    @Test
+    public void testThatBookCanBeUpdated() {
+        Author author = TestDataUtil.createTestAuthorA();
+        Book book = TestDataUtil.createTestBookA(author);
+        underTest.save(book);
+
+        book.setTitle("Percy Patterson");
+        underTest.save(book);
+        Optional<Book> result = underTest.findById(book.getIsbn());
+        assertThat(result).isPresent();
+        assertThat(result.get()).isEqualTo(book);
+    }
+
 //    @Test
 //    public void testThatBookCanBeDeleted() {
 //        Author author = TestDataUtil.createTestAuthor();
