@@ -1,7 +1,7 @@
 package com.jyhaoo.database;
 
 import com.jyhaoo.database.domain.entities.AuthorEntity;
-import com.jyhaoo.database.domain.entities.Book;
+import com.jyhaoo.database.domain.entities.BookEntity;
 
 public final class TestDataUtil {
 
@@ -29,24 +29,24 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookA(final AuthorEntity author) {
-        return Book.builder()
+    public static BookEntity createTestBookA(final AuthorEntity author) {
+        return BookEntity.builder()
                 .isbn("818-1-2034-5033-0")
                 .title("Percy Jakeson")
                 .author(author)
                 .build();
     }
 
-    public static Book createTestBookB(final AuthorEntity author) {
-        return Book.builder()
+    public static BookEntity createTestBookB(final AuthorEntity author) {
+        return BookEntity.builder()
                 .isbn("818-1-2034-5033-1")
                 .title("Hamlet")
                 .author(author)
                 .build();
     }
 
-    public static Book createTestBookC(final AuthorEntity author) {
-        return Book.builder()
+    public static BookEntity createTestBookC(final AuthorEntity author) {
+        return BookEntity.builder()
                 .isbn("818-1-2034-5033-2")
                 .title("Great Water")
                 .author(author)
