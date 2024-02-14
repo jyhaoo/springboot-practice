@@ -1,6 +1,6 @@
-package com.jyhaoo.jdbctemplate.repositories;
+package com.jyhaoo.database.repositories;
 
-import com.jyhaoo.jdbctemplate.domain.Book;
+import com.jyhaoo.database.domain.entities.Book;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

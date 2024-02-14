@@ -1,35 +1,35 @@
-package com.jyhaoo.jdbctemplate;
+package com.jyhaoo.database;
 
-import com.jyhaoo.jdbctemplate.domain.Author;
-import com.jyhaoo.jdbctemplate.domain.Book;
+import com.jyhaoo.database.domain.entities.AuthorEntity;
+import com.jyhaoo.database.domain.entities.Book;
 
 public final class TestDataUtil {
 
-    public static Author createTestAuthorA() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorA() {
+        return AuthorEntity.builder()
                 .id(1L)
                 .name("Tom Harold")
                 .age(80)
                 .build();
     }
 
-    public static Author createTestAuthorB() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorB() {
+        return AuthorEntity.builder()
                 .id(2L)
                 .name("Jerry Hox")
                 .age(46)
                 .build();
     }
 
-    public static Author createTestAuthorC() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorC() {
+        return AuthorEntity.builder()
                 .id(3L)
                 .name("Jared Long")
                 .age(37)
                 .build();
     }
 
-    public static Book createTestBookA(final Author author) {
+    public static Book createTestBookA(final AuthorEntity author) {
         return Book.builder()
                 .isbn("818-1-2034-5033-0")
                 .title("Percy Jakeson")
@@ -37,7 +37,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookB(final Author author) {
+    public static Book createTestBookB(final AuthorEntity author) {
         return Book.builder()
                 .isbn("818-1-2034-5033-1")
                 .title("Hamlet")
@@ -45,7 +45,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static Book createTestBookC(final Author author) {
+    public static Book createTestBookC(final AuthorEntity author) {
         return Book.builder()
                 .isbn("818-1-2034-5033-2")
                 .title("Great Water")

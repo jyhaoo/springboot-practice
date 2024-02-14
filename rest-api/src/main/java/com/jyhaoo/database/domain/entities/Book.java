@@ -1,4 +1,4 @@
-package com.jyhaoo.jdbctemplate.domain;
+package com.jyhaoo.database.domain.entities;
 
 
 import jakarta.persistence.*;
@@ -22,6 +22,6 @@ public class Book {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
-    private Author author;
+    private AuthorEntity author;
 
 }

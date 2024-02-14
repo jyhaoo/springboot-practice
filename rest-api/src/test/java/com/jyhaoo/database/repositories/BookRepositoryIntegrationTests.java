@@ -1,8 +1,8 @@
-package com.jyhaoo.jdbctemplate.repositories;
+package com.jyhaoo.database.repositories;
 
-import com.jyhaoo.jdbctemplate.TestDataUtil;
-import com.jyhaoo.jdbctemplate.domain.Author;
-import com.jyhaoo.jdbctemplate.domain.Book;
+import com.jyhaoo.database.TestDataUtil;
+import com.jyhaoo.database.domain.entities.AuthorEntity;
+import com.jyhaoo.database.domain.entities.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class BookRepositoryIntegrationTests {
 
     @Test
     public void testThatBookCanBeCreatedAndRecalled() {
-        Author author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorA();
         Book book = TestDataUtil.createTestBookA(author);
         underTest.save(book);
 
@@ -39,7 +39,7 @@ public class BookRepositoryIntegrationTests {
 
     @Test
     public void testThatMultipleBooksCanBeCreatedAndRecalled() {
-        Author author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorA();
 
         Book bookA = TestDataUtil.createTestBookA(author);
         underTest.save(bookA);
@@ -58,7 +58,7 @@ public class BookRepositoryIntegrationTests {
 
     @Test
     public void testThatBookCanBeUpdated() {
-        Author author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorA();
         Book book = TestDataUtil.createTestBookA(author);
         underTest.save(book);
 
@@ -71,7 +71,7 @@ public class BookRepositoryIntegrationTests {
 
     @Test
     public void testThatBookCanBeDeleted() {
-        Author author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorA();
         Book book = TestDataUtil.createTestBookA(author);
         underTest.save(book);
         underTest.deleteById(book.getIsbn());

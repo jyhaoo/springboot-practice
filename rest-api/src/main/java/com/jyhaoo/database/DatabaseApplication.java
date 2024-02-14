@@ -1,4 +1,4 @@
-package com.jyhaoo.jdbctemplate;
+package com.jyhaoo.database;
 
 import lombok.extern.java.Log;
 import org.springframework.boot.SpringApplication;

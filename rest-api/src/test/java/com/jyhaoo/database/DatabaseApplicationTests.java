@@ -1,10 +1,10 @@
-package com.jyhaoo.jdbctemplate;
+package com.jyhaoo.database;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JdbcTemplateApplicationTests {
+class DatabaseApplicationTests {
 
 	@Test
 	void contextLoads() {
