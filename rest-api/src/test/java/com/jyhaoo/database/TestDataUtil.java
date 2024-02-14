@@ -1,5 +1,6 @@
 package com.jyhaoo.database;
 
+import com.jyhaoo.database.domain.dto.BookDto;
 import com.jyhaoo.database.domain.entities.AuthorEntity;
 import com.jyhaoo.database.domain.entities.BookEntity;
 
@@ -49,6 +50,14 @@ public final class TestDataUtil {
         return BookEntity.builder()
                 .isbn("818-1-2034-5033-2")
                 .title("Great Water")
+                .author(author)
+                .build();
+    }
+
+    public static BookDto createTestBookDto(final AuthorEntity author) {
+        return BookDto.builder()
+                .isbn("818-1-2034-5033-0")
+                .title("Percy Jakeson")
                 .author(author)
                 .build();
     }
