@@ -1,5 +1,6 @@
 package com.jyhaoo.database.controllers;
 
+import com.jyhaoo.database.services.AuthorService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jyhaoo.database.TestDataUtil;
 import com.jyhaoo.database.domain.entities.AuthorEntity;
@@ -21,14 +22,17 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 public class AuthorControllerIntegrationTests {
 
+    private AuthorService authorService;
+
     private MockMvc mockMvc;
 
     private ObjectMapper objectMapper;
 
     @Autowired
-    public AuthorControllerIntegrationTests(MockMvc mockMvc, ObjectMapper objectMapper) {
+    public AuthorControllerIntegrationTests(MockMvc mockMvc, ObjectMapper objectMapper, AuthorService authorService) {
         this.mockMvc = mockMvc;
         this.objectMapper = objectMapper;
+        this.authorService = authorService;
     }
 
     @Test
@@ -75,6 +79,9 @@ public class AuthorControllerIntegrationTests {
 
     @Test
     public void testThatListAuthorsReturnListOfAuthor() throws Exception {
+        AuthorEntity author = TestDataUtil.createTestAuthorEntityA();
+        authorService.createAuthor(author);
+
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/authors")
                         .contentType(MediaType.APPLICATION_JSON)
