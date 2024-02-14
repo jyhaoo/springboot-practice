@@ -6,7 +6,7 @@ import com.jyhaoo.database.domain.entities.BookEntity;
 
 public final class TestDataUtil {
 
-    public static AuthorEntity createTestAuthorA() {
+    public static AuthorEntity createTestAuthorEntityA() {
         return AuthorEntity.builder()
                 .id(1L)
                 .name("Tom Harold")
@@ -14,7 +14,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static AuthorEntity createTestAuthorB() {
+    public static AuthorEntity createTestAuthorEntityB() {
         return AuthorEntity.builder()
                 .id(2L)
                 .name("Jerry Hox")
@@ -22,7 +22,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static AuthorEntity createTestAuthorC() {
+    public static AuthorEntity createTestAuthorEntityC() {
         return AuthorEntity.builder()
                 .id(3L)
                 .name("Jared Long")

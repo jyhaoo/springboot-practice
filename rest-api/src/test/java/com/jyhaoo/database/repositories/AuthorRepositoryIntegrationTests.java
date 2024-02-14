@@ -27,7 +27,7 @@ public class AuthorRepositoryIntegrationTests {
 
     @Test
     public void testThatAuthorCanBeCreatedAndRecalled() {
-        AuthorEntity author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorEntityA();
         underTest.save(author);
 
         Optional<AuthorEntity> result = underTest.findById(author.getId());
@@ -37,11 +37,11 @@ public class AuthorRepositoryIntegrationTests {
 
     @Test
     public void testThatMultipleAuthorsCanBeCreatedAndRecalled() {
-        AuthorEntity authorA = TestDataUtil.createTestAuthorA();
+        AuthorEntity authorA = TestDataUtil.createTestAuthorEntityA();
         underTest.save(authorA);
-        AuthorEntity authorB = TestDataUtil.createTestAuthorB();
+        AuthorEntity authorB = TestDataUtil.createTestAuthorEntityB();
         underTest.save(authorB);
-        AuthorEntity authorC = TestDataUtil.createTestAuthorC();
+        AuthorEntity authorC = TestDataUtil.createTestAuthorEntityC();
         underTest.save(authorC);
         Iterable<AuthorEntity> result = underTest.findAll();
         assertThat(result)
@@ -51,7 +51,7 @@ public class AuthorRepositoryIntegrationTests {
 
     @Test
     public void testThatAuthorCanBeUpdated() {
-        AuthorEntity author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorEntityA();
         underTest.save(author);
 
         author.setName("UPDATED");
@@ -63,7 +63,7 @@ public class AuthorRepositoryIntegrationTests {
 
     @Test
     public void testThatAuthorCanBeDeleted() {
-        AuthorEntity author = TestDataUtil.createTestAuthorA();
+        AuthorEntity author = TestDataUtil.createTestAuthorEntityA();
         underTest.save(author);
         underTest.deleteById(author.getId());
         Optional<AuthorEntity> result = underTest.findById(author.getId());
@@ -72,11 +72,11 @@ public class AuthorRepositoryIntegrationTests {
 
     @Test
     public void testThatGetAuthorsWithAgeLessThan() {
-        AuthorEntity authorA = TestDataUtil.createTestAuthorA();
+        AuthorEntity authorA = TestDataUtil.createTestAuthorEntityA();
         underTest.save(authorA);
-        AuthorEntity authorB = TestDataUtil.createTestAuthorB();
+        AuthorEntity authorB = TestDataUtil.createTestAuthorEntityB();
         underTest.save(authorB);
-        AuthorEntity authorC = TestDataUtil.createTestAuthorC();
+        AuthorEntity authorC = TestDataUtil.createTestAuthorEntityC();
         underTest.save(authorC);
 
         Iterable<AuthorEntity> result = underTest.ageLessThan(50);
