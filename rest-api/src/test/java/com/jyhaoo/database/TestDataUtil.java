@@ -1,5 +1,6 @@
 package com.jyhaoo.database;
 
+import com.jyhaoo.database.domain.dto.AuthorDto;
 import com.jyhaoo.database.domain.dto.BookDto;
 import com.jyhaoo.database.domain.entities.AuthorEntity;
 import com.jyhaoo.database.domain.entities.BookEntity;
@@ -27,6 +28,14 @@ public final class TestDataUtil {
                 .id(3L)
                 .name("Jared Long")
                 .age(37)
+                .build();
+    }
+
+    public static AuthorDto createTestAuthorDtoA() {
+        return AuthorDto.builder()
+                .id(1L)
+                .name("Tom Harold")
+                .age(80)
                 .build();
     }
 
