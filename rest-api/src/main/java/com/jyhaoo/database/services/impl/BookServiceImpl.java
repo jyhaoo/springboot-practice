@@ -3,6 +3,8 @@ package com.jyhaoo.database.services.impl;
 import com.jyhaoo.database.domain.entities.BookEntity;
 import com.jyhaoo.database.repositories.BookRepository;
 import com.jyhaoo.database.services.BookService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.management.RuntimeErrorException;
@@ -35,6 +37,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public Optional<BookEntity> findOne(String isbn) {
         return bookRepository.findById(isbn);
+    }
+
+    @Override
+    public Page<BookEntity> findAll(Pageable pageable) {
+        return bookRepository.findAll(pageable);
     }
 
     @Override
